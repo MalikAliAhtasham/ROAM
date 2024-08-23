@@ -1,0 +1,130 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+#icon1 {
+    color: #ff681a;
+    font-size: 3rem; 
+    animation: moveIcon 4s linear infinite;
+}
+
+@keyframes moveIcon {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Spinner Container */
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Full-screen effect */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
+    visibility: hidden; /* Hide spinner initially */
+    opacity: 0;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out; /* Smooth transition */
+    z-index: 1000; /* Ensure spinner is on top */
+}
+
+/* Custom Spinner Animation */
+.spinner::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff681a; /* Spinner color */
+    /* Custom animation */
+    animation: flip 1s infinite;
+}
+
+/* Flip Animation */
+@keyframes flip {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(180deg) rotateX(180deg);
+    }
+}
+
+/* Show the spinner */
+.spinner.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Hide Content */
+.hide-content {
+    display: none; /* Hide content */
+}
+
+/* Animation */
+
+/* Left Animation */
+.left-animate-R {
+    position: relative;
+    animation-name: left;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes left {
+    from{left: -100%;}
+    to{left: 0%}
+  }
+  .right-animate-O {
+    position: relative;
+    animation-name: right;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes right {
+    from{right: -100%;}
+    to{right: 0%}
+  }
+
+  .bottom-animate-M {
+    position: relative;
+    animation-name: bottom;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes bottom {
+    from{bottom: -100%;}
+    to{bottom: 20%}
+  }
+
+  .right-animate-A {
+    position: relative;
+    animation-name: right-A;
+    animation-duration: 1600ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes right-A {
+    from{right: -100%;}
+    to{right: 0%}
+  }
+  .btn:hover {
+     color: #fff;
+  }
